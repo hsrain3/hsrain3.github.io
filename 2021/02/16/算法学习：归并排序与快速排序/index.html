@@ -6,15 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2021/2 | Hexo</title>
+  <title>算法学习：排序算法 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2021/02/index.html">
+  <meta name="description" content="排序算法中用的最多的是快速排序和归并，还有堆排序。因为效率比较高，时间复杂度均为O(nlogn)。 用l，r表示待排序数组左右端点 快速排序快速排序的步骤： 1、确定分界点x    一般是l，r，或者mid。 2、调整范围 把数组整理成两部分以j位置为分界点，j左边的数都小于等于x，右边的数都大于等于分界点x，这是j位置上的数不一定是x。（根据下面的代码）其他的算法书上有将j位置归位为x的代码（见">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法学习：排序算法">
+<meta property="og:url" content="http://example.com/2021/02/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E4%B8%8E%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="排序算法中用的最多的是快速排序和归并，还有堆排序。因为效率比较高，时间复杂度均为O(nlogn)。 用l，r表示待排序数组左右端点 快速排序快速排序的步骤： 1、确定分界点x    一般是l，r，或者mid。 2、调整范围 把数组整理成两部分以j位置为分界点，j左边的数都小于等于x，右边的数都大于等于分界点x，这是j位置上的数不一定是x。（根据下面的代码）其他的算法书上有将j位置归位为x的代码（见">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2021/02/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E4%B8%8E%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/victor/Downloads/IMG_1338.jpg">
+<meta property="article:published_time" content="2021-02-16T13:58:20.000Z">
+<meta property="article:modified_time" content="2021-03-04T16:13:44.682Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/02/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E4%B8%8E%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/victor/Downloads/IMG_1338.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,103 +156,214 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-算法学习：归并排序与快速排序" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/17/hello-world/" class="archive-article-date">
-  	<time datetime="2021-02-17T07:49:57.312Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-17</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/17/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      算法学习：排序算法
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E4%B8%8E%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="archive-article-date">
+        
+        <a href="/2021/02/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E4%B8%8E%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="archive-article-date">
   	<time datetime="2021-02-16T13:58:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-16</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E4%B8%8E%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">算法学习：排序算法</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>排序算法中用的最多的是快速排序和归并，还有堆排序。因为效率比较高，时间复杂度均为O(nlogn)。</p>
+<p>用l，r表示待排序数组左右端点</p>
+<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p>快速排序的步骤：</p>
+<p>1、确定分界点x    一般是l，r，或者mid。</p>
+<p>2、调整范围</p>
+<p>把数组整理成两部分以j位置为分界点，j左边的数都小于等于x，右边的数都大于等于分界点x，这是j位置上的数不一定是x。（根据下面的代码）其他的算法书上有将j位置归位为x的代码（见算法4）。</p>
+<p>3、递归处理两边</p>
+<p>代码如下</p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
-          
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> q[ ],<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l&gt;=r) <span class="keyword">return</span>;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">int</span> x=q[(l+r)/<span class="number">2</span>],i=l<span class="number">-1</span>,j=r+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;j)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">do</span> i++;<span class="keyword">while</span>(q[i]&lt;x);</span><br><span class="line">        <span class="keyword">do</span> j--; <span class="keyword">while</span>(q[j]&gt;x);</span><br><span class="line">        <span class="keyword">if</span>(i&lt;j) swap(q[i],q[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    quick_sort(q,l,j);</span><br><span class="line">    quick_sort(q,j+<span class="number">1</span>,r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>应用：快速选择</p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/">Leetcode215</a></p>
+<p>本题要求找第k大的数。为了理解方便，转化为第_k小的数。</p>
+<p>这里可以应用快速排序的模板+二分的思想。每次把数组分为左右两边的时候，判断第k是否在j位置的左边，如果k&lt;=j我们要找的目标一定在[l,j]中。反之则向右边递归。递归终止条件l==r。即区间只有一个元素。</p>
+<p>代码如下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        k=nums.size()-k+<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> quick_select(nums,<span class="number">0</span>,nums.size()<span class="number">-1</span>,k);</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">quick_select</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums,<span class="keyword">int</span> l,<span class="keyword">int</span> r, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(l==r) <span class="keyword">return</span> nums[l];</span><br><span class="line">        <span class="keyword">int</span> x=nums[(l+r)/<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">int</span> i=l<span class="number">-1</span>,j=r+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">do</span> i++; <span class="keyword">while</span>(nums[i]&lt;x);</span><br><span class="line">            <span class="keyword">do</span> j--; <span class="keyword">while</span>(nums[j]&gt;x);</span><br><span class="line">            <span class="keyword">if</span>(i&lt;j) swap(nums[i],nums[j]);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> sl=j-l+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(k&lt;=sl) <span class="keyword">return</span> quick_select(nums,l,j,k);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> quick_select(nums,j+<span class="number">1</span>,r,k-sl);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><p>归并排序是典型的分治思想</p>
+<p>步骤如下</p>
+<p>1、明确分界点。即mid=（l+r）/2</p>
+<p>2、递归排序左右</p>
+<p>3、归并（核心）</p>
+<p>代码如下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge_sort</span><span class="params">(<span class="keyword">int</span> q[ ], <span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l&gt;=r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> mid=l+r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    merge_sort(q,l,mid);</span><br><span class="line">    merge_sort(q,mid+<span class="number">1</span>,r);</span><br><span class="line">    <span class="keyword">int</span> k=<span class="number">0</span>,i=l,j=mid+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=mid&amp;&amp;j&lt;=r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(q[i]&lt;=q[j]) tmp[k++]=q[i++];</span><br><span class="line">        <span class="keyword">else</span> tmp[k++]=q[j++];</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=mid) tmp[k++]=q[i++];</span><br><span class="line">    <span class="keyword">while</span>(j&lt;=r) tmp[k++]=q[j++];</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>,j=l;j&lt;=r;i++,j++) q[j]=tmp[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>核心是将每次归并的结果放入一个临时数组再放回我们的待排序数组，在归并的过程中用到了两个指针，每次将小的那个指针指向的数放入数组，并将指针后移。</p>
+<p>应用：</p>
+<p>求逆序对的数量 <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof">剑指offer51</a></p>
+<p>这题主要是应用了归并排序分治的思想，以中点为界，我们可以将逆序对分为三类 1、都出现在数组左边 2、都出现在数组右边 3、一个在左边一个在右边。</p>
+<p>定义我们的merge_sort函数可以将数组排序，并返回当前区域中逆序对的数量。同时考虑更新当前逆序对的数量用res表示。前两类逆序对数量很好求，直接递归调用</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res=merge_sort(l,mid)+merge_sort(mid+<span class="number">1</span>,r)</span><br></pre></td></tr></table></figure>
 
+
+<p>在归并的那步中，可以求出第三类逆序对的数量。<img src="/2021/02/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E4%B8%8E%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/victor/Downloads/IMG_1338.jpg"></p>
+<p>当q[i]&gt;q[j]时可以得出对于q[j]的第三类逆序对数量为mid-i+1。</p>
+<p>代码如下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; tmp;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reversePairs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n=nums.size();</span><br><span class="line">        tmp=<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; (n);</span><br><span class="line">        <span class="keyword">return</span> merge_sort(nums,<span class="number">0</span>,n<span class="number">-1</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">merge_sort</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(l&gt;=r) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> mid=l+r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        res=merge_sort(nums,l,mid)+merge_sort(nums,mid+<span class="number">1</span>,r);</span><br><span class="line">        <span class="keyword">int</span> i=l,j=mid+<span class="number">1</span>,k=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;=mid&amp;&amp;j&lt;=r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]&lt;=nums[j]) tmp[k++]=nums[i++];</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                res+= mid-i+<span class="number">1</span>;</span><br><span class="line">                tmp[k++]=nums[j++];</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;=mid) tmp[k++]=nums[i++];</span><br><span class="line">        <span class="keyword">while</span>(j&lt;=r) tmp[k++]=nums[j++];</span><br><span class="line">        <span class="keyword">for</span>(i=l,j=<span class="number">0</span>;i&lt;=r;i++,j++) nums[i]=tmp[j];</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/02/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E4%B8%8E%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/14/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%8F%8A%E5%BA%94%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2021-02-14T15:47:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-14</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2021/02/17/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/02/14/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%8F%8A%E5%BA%94%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">算法学习：二分查找及应用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/14/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%8F%8A%E5%BA%94%E7%94%A8/">算法学习：二分查找及应用</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -269,8 +386,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
