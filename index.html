@@ -152,6 +152,75 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-数据结构：单调栈" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E8%B0%83%E6%A0%88/">数据结构：单调栈</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E8%B0%83%E6%A0%88/" class="archive-article-date">
+  	<time datetime="2021-03-07T15:47:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h2><p>单调栈方法主要用来处理例如数组左边第一个比它大的元素，右边第一个比它小的元素等等问题。</p>
+<p>以<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/next-greater-element-i/">Leetcode496</a>为例，看一下思考方法。这道题实际上就是求数组中右边第一个比它大的元素，然后再用hash表映射一下，不要被两个数组迷惑了。</p>
+<p>遇到这类问题首先考虑暴力做法，从前往后扫描每一个数组元素，再套一层循环，从当前元素后面开始扫描，找到一个比它大的。这种方法的复杂度是O(n^2)。现在考虑利用栈结构优化。</p>
+<p>我们从后往前扫描，没遇到一个元素就把它入栈，并求出next greater number。考虑当轮到a[i]入栈的时候，它要从前往后扫描并找到第一个比它大的数，否则就为-1。在扫描过程中假设遇到a[i+k]&lt;=a[i]，考虑这a[i+k]这个元素是否会被后面的元素用到，也就是作为答案。答案是否定的。后面进来的元素它的前面已经有a[i]了，第一个比它大的元素肯定不会轮到a[i+k]，所以这时可以直接把a[i+k]这个元素弹出。</p>
+<p>代码如下</p>
+        
+          <a class="article-more-a" href="/2021/03/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E8%B0%83%E6%A0%88/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E8%B0%83%E6%A0%88/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-算法学习：排序算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

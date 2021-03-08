@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>算法学习：排序算法 | Hexo</title>
+  <title>数据结构：单调栈 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="排序算法中用的最多的是快速排序和归并，还有堆排序。因为效率比较高，时间复杂度均为O(nlogn)。 用l，r表示待排序数组左右端点 快速排序快速排序的步骤： 1、确定分界点x    一般是l，r，或者mid。 2、调整范围 把数组整理成两部分以j位置为分界点，j左边的数都小于等于x，右边的数都大于等于分界点x，这是j位置上的数不一定是x。（根据下面的代码）其他的算法书上有将j位置归位为x的代码（见">
+  <meta name="description" content="单调栈单调栈方法主要用来处理例如数组左边第一个比它大的元素，右边第一个比它小的元素等等问题。 以Leetcode496为例，看一下思考方法。这道题实际上就是求数组中右边第一个比它大的元素，然后再用hash表映射一下，不要被两个数组迷惑了。 遇到这类问题首先考虑暴力做法，从前往后扫描每一个数组元素，再套一层循环，从当前元素后面开始扫描，找到一个比它大的。这种方法的复杂度是O(n^2)。现在考虑利用栈">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法学习：排序算法">
-<meta property="og:url" content="http://example.com/2021/02/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:title" content="数据结构：单调栈">
+<meta property="og:url" content="http://example.com/2021/03/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E8%B0%83%E6%A0%88/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="排序算法中用的最多的是快速排序和归并，还有堆排序。因为效率比较高，时间复杂度均为O(nlogn)。 用l，r表示待排序数组左右端点 快速排序快速排序的步骤： 1、确定分界点x    一般是l，r，或者mid。 2、调整范围 把数组整理成两部分以j位置为分界点，j左边的数都小于等于x，右边的数都大于等于分界点x，这是j位置上的数不一定是x。（根据下面的代码）其他的算法书上有将j位置归位为x的代码（见">
+<meta property="og:description" content="单调栈单调栈方法主要用来处理例如数组左边第一个比它大的元素，右边第一个比它小的元素等等问题。 以Leetcode496为例，看一下思考方法。这道题实际上就是求数组中右边第一个比它大的元素，然后再用hash表映射一下，不要被两个数组迷惑了。 遇到这类问题首先考虑暴力做法，从前往后扫描每一个数组元素，再套一层循环，从当前元素后面开始扫描，找到一个比它大的。这种方法的复杂度是O(n^2)。现在考虑利用栈">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20210306001232744.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzAzNDUxOA==,size_16,color_FFFFFF,t_70#pic_center">
-<meta property="article:published_time" content="2021-02-16T13:58:20.000Z">
-<meta property="article:modified_time" content="2021-03-05T16:14:01.482Z">
+<meta property="article:published_time" content="2021-03-07T15:47:09.000Z">
+<meta property="article:modified_time" content="2021-03-08T16:13:06.494Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20210306001232744.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzAzNDUxOA==,size_16,color_FFFFFF,t_70#pic_center">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -156,71 +154,50 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-算法学习：排序算法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-数据结构：单调栈" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      算法学习：排序算法
+      数据结构：单调栈
     </h1>
   
 
         
-        <a href="/2021/02/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-02-16T13:58:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-16</time>
+        <a href="/2021/03/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E8%B0%83%E6%A0%88/" class="archive-article-date">
+  	<time datetime="2021-03-07T15:47:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>排序算法中用的最多的是快速排序和归并，还有堆排序。因为效率比较高，时间复杂度均为O(nlogn)。</p>
-<p>用l，r表示待排序数组左右端点</p>
-<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p>快速排序的步骤：</p>
-<p>1、确定分界点x    一般是l，r，或者mid。</p>
-<p>2、调整范围</p>
-<p>把数组整理成两部分以j位置为分界点，j左边的数都小于等于x，右边的数都大于等于分界点x，这是j位置上的数不一定是x。（根据下面的代码）其他的算法书上有将j位置归位为x的代码（见算法4）。</p>
-<p>3、递归处理两边</p>
+        <h2 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h2><p>单调栈方法主要用来处理例如数组左边第一个比它大的元素，右边第一个比它小的元素等等问题。</p>
+<p>以<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/next-greater-element-i/">Leetcode496</a>为例，看一下思考方法。这道题实际上就是求数组中右边第一个比它大的元素，然后再用hash表映射一下，不要被两个数组迷惑了。</p>
+<p>遇到这类问题首先考虑暴力做法，从前往后扫描每一个数组元素，再套一层循环，从当前元素后面开始扫描，找到一个比它大的。这种方法的复杂度是O(n^2)。现在考虑利用栈结构优化。</p>
+<p>我们从后往前扫描，没遇到一个元素就把它入栈，并求出next greater number。考虑当轮到a[i]入栈的时候，它要从前往后扫描并找到第一个比它大的数，否则就为-1。在扫描过程中假设遇到a[i+k]&lt;=a[i]，考虑这a[i+k]这个元素是否会被后面的元素用到，也就是作为答案。答案是否定的。后面进来的元素它的前面已经有a[i]了，第一个比它大的元素肯定不会轮到a[i+k]，所以这时可以直接把a[i+k]这个元素弹出。</p>
 <p>代码如下</p>
 <a id="more"></a>
 
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> q[ ],<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l&gt;=r) <span class="keyword">return</span>;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">int</span> x=q[(l+r)/<span class="number">2</span>],i=l<span class="number">-1</span>,j=r+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;j)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">do</span> i++;<span class="keyword">while</span>(q[i]&lt;x);</span><br><span class="line">        <span class="keyword">do</span> j--; <span class="keyword">while</span>(q[j]&gt;x);</span><br><span class="line">        <span class="keyword">if</span>(i&lt;j) swap(q[i],q[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    quick_sort(q,l,j);</span><br><span class="line">    quick_sort(q,j+<span class="number">1</span>,r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>应用：快速选择</p>
-<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/">Leetcode215</a></p>
-<p>本题要求找第k大的数。为了理解方便，转化为第_k小的数。</p>
-<p>这里可以应用快速排序的模板+二分的思想。每次把数组分为左右两边的时候，判断第k是否在j位置的左边，如果k&lt;=j我们要找的目标一定在[l,j]中。反之则向右边递归。递归终止条件l==r。即区间只有一个元素。</p>
-<p>代码如下</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        k=nums.size()-k+<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> quick_select(nums,<span class="number">0</span>,nums.size()<span class="number">-1</span>,k);</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">quick_select</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums,<span class="keyword">int</span> l,<span class="keyword">int</span> r, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(l==r) <span class="keyword">return</span> nums[l];</span><br><span class="line">        <span class="keyword">int</span> x=nums[(l+r)/<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">int</span> i=l<span class="number">-1</span>,j=r+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">do</span> i++; <span class="keyword">while</span>(nums[i]&lt;x);</span><br><span class="line">            <span class="keyword">do</span> j--; <span class="keyword">while</span>(nums[j]&gt;x);</span><br><span class="line">            <span class="keyword">if</span>(i&lt;j) swap(nums[i],nums[j]);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> sl=j-l+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(k&lt;=sl) <span class="keyword">return</span> quick_select(nums,l,j,k);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> quick_select(nums,j+<span class="number">1</span>,r,k-sl);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><p>归并排序是典型的分治思想</p>
-<p>步骤如下</p>
-<p>1、明确分界点。即mid=（l+r）/2</p>
-<p>2、递归排序左右</p>
-<p>3、归并（核心）</p>
-<p>代码如下</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge_sort</span><span class="params">(<span class="keyword">int</span> q[ ], <span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l&gt;=r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> mid=l+r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    merge_sort(q,l,mid);</span><br><span class="line">    merge_sort(q,mid+<span class="number">1</span>,r);</span><br><span class="line">    <span class="keyword">int</span> k=<span class="number">0</span>,i=l,j=mid+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=mid&amp;&amp;j&lt;=r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(q[i]&lt;=q[j]) tmp[k++]=q[i++];</span><br><span class="line">        <span class="keyword">else</span> tmp[k++]=q[j++];</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=mid) tmp[k++]=q[i++];</span><br><span class="line">    <span class="keyword">while</span>(j&lt;=r) tmp[k++]=q[j++];</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>,j=l;j&lt;=r;i++,j++) q[j]=tmp[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>核心是将每次归并的结果放入一个临时数组再放回我们的待排序数组，在归并的过程中用到了两个指针，每次将小的那个指针指向的数放入数组，并将指针后移。</p>
-<p>应用：</p>
-<p>求逆序对的数量 <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof">剑指offer51</a></p>
-<p>这题主要是应用了归并排序分治的思想，以中点为界，我们可以将逆序对分为三类 1、都出现在数组左边 2、都出现在数组右边 3、一个在左边一个在右边。</p>
-<p>定义我们的merge_sort函数可以将数组排序，并返回当前区域中逆序对的数量。同时考虑更新当前逆序对的数量用res表示。前两类逆序对数量很好求，直接递归调用</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res=merge_sort(l,mid)+merge_sort(mid+<span class="number">1</span>,r)</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">nextGreaterElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; mystack;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; tmp;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">        <span class="comment">//先找出nums2右边第一个比当前元素大的</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=nums2.size()<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">while</span>(!mystack.empty()&amp;&amp;mystack.top()&lt;=nums2[i])</span><br><span class="line">            &#123;</span><br><span class="line">                mystack.pop();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(!mystack.empty())</span><br><span class="line">            &#123;</span><br><span class="line">                tmp[nums2[i]]=mystack.top();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> tmp[nums2[i]]=<span class="number">-1</span>;</span><br><span class="line">            mystack.push(nums2[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums1.size();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            res.push_back(tmp[nums1[i]]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>再来看一个拓展题<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/next-greater-element-ii/">leetcode503</a></p>
+<p>这题要求循环搜索下一个更大元素，那其实可以把数组复制一份，接在后面。相当于我们扫描了两遍，但实际下标还是在原数组内的（求余）。</p>
+<p>代码入下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">nextGreaterElements</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; mystack;</span><br><span class="line">        <span class="keyword">int</span> n=nums.size();</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">res</span><span class="params">(n)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>*n<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">while</span>(!mystack.empty()&amp;&amp;mystack.top()&lt;=nums[i%(n)]) mystack.pop();</span><br><span class="line">            <span class="keyword">if</span>(!mystack.empty()) res[i%n]=mystack.top();</span><br><span class="line">            <span class="keyword">else</span> res[i%n]=<span class="number">-1</span>;</span><br><span class="line">            mystack.push(nums[i%n]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
-<p>在归并的那步中，可以求出第三类逆序对的数量。<img src="https://img-blog.csdnimg.cn/20210306001232744.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzAzNDUxOA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<p>当q[i]&gt;q[j]时可以得出对于q[j]的第三类逆序对数量为mid-i+1。</p>
-<p>代码如下</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; tmp;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reversePairs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n=nums.size();</span><br><span class="line">        tmp=<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; (n);</span><br><span class="line">        <span class="keyword">return</span> merge_sort(nums,<span class="number">0</span>,n<span class="number">-1</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">merge_sort</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(l&gt;=r) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> mid=l+r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        res=merge_sort(nums,l,mid)+merge_sort(nums,mid+<span class="number">1</span>,r);</span><br><span class="line">        <span class="keyword">int</span> i=l,j=mid+<span class="number">1</span>,k=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;=mid&amp;&amp;j&lt;=r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]&lt;=nums[j]) tmp[k++]=nums[i++];</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                res+= mid-i+<span class="number">1</span>;</span><br><span class="line">                tmp[k++]=nums[j++];</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;=mid) tmp[k++]=nums[i++];</span><br><span class="line">        <span class="keyword">while</span>(j&lt;=r) tmp[k++]=nums[j++];</span><br><span class="line">        <span class="keyword">for</span>(i=l,j=<span class="number">0</span>;i&lt;=r;i++,j++) nums[i]=tmp[j];</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><p>堆是一种完全二叉树。它可以在O（1）时间访问优先级最高的节点，所以可以用来实现优先级队列。对于堆的增删查改操作，主要是要维护堆顶元素一直为最大或者最小。堆排序的过程就是将序列建为最小堆，然后把最小堆的堆顶依次输出删除即可。</p>
-<p>那么如何维护最小堆（最大堆也是同理）。首先就是关键的操作up和down。我们要维护的是堆中最小的元素一直在堆顶，顾名思义up就是将小元素上浮，当前元素比父节点元素小，不满足堆的定义，就与父节点交换位置 。那么down操作就是将大的元素下沉。</p>
-<p>再来看一下删除操作，对于堆来说删除堆顶元素，实际上是将堆的最后一个元素覆盖堆顶元素，维护一个size变量，size–，再执行down操作，调整元素位置。</p>
-<p>堆排序算法实际上就只用到down操作。 </p>
-<p>down的实现如下</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">down</span><span class="params">(<span class="keyword">int</span> u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t=u;</span><br><span class="line">    <span class="keyword">if</span>(<span class="number">2</span>*u&lt;=heap_size&amp;&amp;h[<span class="number">2</span>*u]&lt;h[t]) t=<span class="number">2</span>*u;</span><br><span class="line">    <span class="keyword">if</span>(<span class="number">2</span>*u+<span class="number">1</span>&lt;=heap_size&amp;&amp;h[<span class="number">2</span>*u+<span class="number">1</span>]&lt;h[t]) t=<span class="number">2</span>*u+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(u!=t) &#123;</span><br><span class="line">        swap(h[u],h[t]);</span><br><span class="line">        down(t);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>建堆的话可以从n/2开始，因为最下面一层的元素是不需要down的。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=n/<span class="number">2</span>;i;i--) down(i);</span><br></pre></td></tr></table></figure>
-<p>堆排序的复杂度也是O（nlogn）。                                                                                                                                                                                                                                                                                                                                                                                                                                                          </p>
+
+
+
+
+
+
+
+
+
+
 
       
 
@@ -300,7 +277,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/02/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E8%B0%83%E6%A0%88/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -314,18 +291,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/03/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E8%B0%83%E6%A0%88/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          数据结构：单调栈
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/02/14/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%8F%8A%E5%BA%94%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">算法学习：二分查找及应用</div>
+    <a href="/2021/02/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">算法学习：排序算法</div>
       <i class="icon-circle-right"></i>
     </a>
   
