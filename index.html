@@ -152,19 +152,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-数据结构：单调栈" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-数据结构：单调栈与单调队列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E8%B0%83%E6%A0%88/">数据结构：单调栈</a>
+      <a class="article-title" href="/2021/03/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E8%B0%83%E6%A0%88%E4%B8%8E%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/">数据结构：单调栈与单调队列</a>
     </h1>
   
 
         
-        <a href="/2021/03/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E8%B0%83%E6%A0%88/" class="archive-article-date">
+        <a href="/2021/03/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E8%B0%83%E6%A0%88%E4%B8%8E%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" class="archive-article-date">
   	<time datetime="2021-03-07T15:47:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-07</time>
 </a>
         
@@ -178,7 +178,7 @@
 <p>我们从后往前扫描，没遇到一个元素就把它入栈，并求出next greater number。考虑当轮到a[i]入栈的时候，它要从前往后扫描并找到第一个比它大的数，否则就为-1。在扫描过程中假设遇到a[i+k]&lt;=a[i]，考虑这a[i+k]这个元素是否会被后面的元素用到，也就是作为答案。答案是否定的。后面进来的元素它的前面已经有a[i]了，第一个比它大的元素肯定不会轮到a[i+k]，所以这时可以直接把a[i+k]这个元素弹出。</p>
 <p>代码如下</p>
         
-          <a class="article-more-a" href="/2021/03/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E8%B0%83%E6%A0%88/#more">more >></a>
+          <a class="article-more-a" href="/2021/03/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E8%B0%83%E6%A0%88%E4%B8%8E%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/#more">more >></a>
         
       
 
@@ -191,7 +191,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E8%B0%83%E6%A0%88/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/03/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E8%B0%83%E6%A0%88%E4%B8%8E%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/">展开全文 >></a>
         </p>
       
 
