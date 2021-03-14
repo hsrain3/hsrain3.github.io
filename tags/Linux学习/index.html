@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hexo</title>
+  <title>Tag: Linux学习 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="http://example.com/tags/Linux%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
@@ -152,262 +152,34 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-数据结构：单调栈与单调队列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E8%B0%83%E6%A0%88%E4%B8%8E%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/">数据结构：单调栈与单调队列</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E8%B0%83%E6%A0%88%E4%B8%8E%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" class="archive-article-date">
-  	<time datetime="2021-03-07T15:47:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-07</time>
-</a>
-        
-      </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h2><p>单调栈方法主要用来处理例如数组左边第一个比它大的元素，右边第一个比它小的元素等等问题。</p>
-<p>以<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/next-greater-element-i/">Leetcode496</a>为例，看一下思考方法。这道题实际上就是求数组中右边第一个比它大的元素，然后再用hash表映射一下，不要被两个数组迷惑了。</p>
-<p>遇到这类问题首先考虑暴力做法，从前往后扫描每一个数组元素，再套一层循环，从当前元素后面开始扫描，找到一个比它大的。这种方法的复杂度是O(n^2)。现在考虑利用栈结构优化。</p>
-<p>我们从后往前扫描，没遇到一个元素就把它入栈，并求出next greater number。考虑当轮到a[i]入栈的时候，它要从前往后扫描并找到第一个比它大的数，否则就为-1。在扫描过程中假设遇到a[i+k]&lt;=a[i]，考虑这a[i+k]这个元素是否会被后面的元素用到，也就是作为答案。答案是否定的。后面进来的元素它的前面已经有a[i]了，第一个比它大的元素肯定不会轮到a[i+k]，所以这时可以直接把a[i+k]这个元素弹出。</p>
-<p>代码如下</p>
-        
-          <a class="article-more-a" href="/2021/03/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E8%B0%83%E6%A0%88%E4%B8%8E%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
+    
       
       
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E8%B0%83%E6%A0%88%E4%B8%8E%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-算法学习：排序算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+        <div class="archives">
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/02/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">算法学习：排序算法</a>
-    </h1>
-  
-
-        
-        <a href="/2021/02/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-02-16T13:58:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>排序算法中用的最多的是快速排序和归并，还有堆排序。因为效率比较高，时间复杂度均为O(nlogn)。</p>
-<p>用l，r表示待排序数组左右端点</p>
-<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p>快速排序的步骤：</p>
-<p>1、确定分界点x    一般是l，r，或者mid。</p>
-<p>2、调整范围</p>
-<p>把数组整理成两部分以j位置为分界点，j左边的数都小于等于x，右边的数都大于等于分界点x，这是j位置上的数不一定是x。（根据下面的代码）其他的算法书上有将j位置归位为x的代码（见算法4）。</p>
-<p>3、递归处理两边</p>
-<p>代码如下</p>
-        
-          <a class="article-more-a" href="/2021/02/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/02/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-算法学习：二分查找及应用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/02/14/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%8F%8A%E5%BA%94%E7%94%A8/">算法学习：二分查找及应用</a>
-    </h1>
-  
-
-        
-        <a href="/2021/02/14/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%8F%8A%E5%BA%94%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2021-02-14T15:47:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="二分查找思想"><a href="#二分查找思想" class="headerlink" title="二分查找思想"></a>二分查找思想</h2><p>看了y总的讲解，第一次知道二分并不一定是要排序才能应用。</p>
-<p>只要可以根据要搜索的值把代搜索区间分为两半，即可应用。</p>
-<h3 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h3><p>以<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/">Leetcode 34题</a>为例</p>
-<p>本题是要寻找排序数组中给定值的第一个和最后一个元素的位置。</p>
-<p>设目标值=x</p>
-<p>首先以上面说的二分思想，我们要搜索两个位置，也就是要用两次二分，虽然它们的值相等。对于目标值的开始位置，它的右边包括它本身的区间满足&gt;=x ，它的左边（不过包括它本身）满足&lt;x，这时我们要找的位置位于右边的区间末尾，注意我们划分的这两个区间没有重叠，即每次都在闭区间内搜索。同理对于x的结束位置也可以将区间划分为两半，左边（包括x的位置）&lt;=x, 右边（不包括x）&gt;x。分别根据划分的区间，写函数来计算开始和结束位置。</p>
-<p>代码如下</p>
-        
-          <a class="article-more-a" href="/2021/02/14/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%8F%8A%E5%BA%94%E7%94%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/02/14/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%8F%8A%E5%BA%94%E7%94%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ubuntu" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/25/ubuntu/">Ubuntu 虚拟机nat模式下配置ssh</a>
-    </h1>
-  
-
-        
-        <a href="/2021/01/25/ubuntu/" class="archive-article-date">
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2021/01/25/ubuntu/" class="archive-article-date">
   	<time datetime="2021-01-25T08:36:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-25</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id><a href="#" class="headerlink" title></a></h1><p>虚拟机：VMware 16，系统：Ubuntu20.04.1</p>
-<p>一般只有桥接模式下宿主机可以ssh连接，但是之前按照网上的一直配置不成功，而且nat模式下Ubuntu系统安装完会自动联网，只需配置ssh。参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/disalone201107/article/details/78411073?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1.control">https://blog.csdn.net/disalone201107/article/details/78411073?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1.control</a></p>
-<p>用下面的方法解决ssh配置问题</p>
-        
-          <a class="article-more-a" href="/2021/01/25/ubuntu/#more">more >></a>
-        
-      
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/01/25/ubuntu/">Ubuntu 虚拟机nat模式下配置ssh</a>
+    </h1>
+  
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -419,41 +191,19 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/25/ubuntu/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
+    </div></section>
+  
+
+    
 
 
           </div>
@@ -475,10 +225,10 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
