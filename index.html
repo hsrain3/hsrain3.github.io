@@ -152,6 +152,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-算法学习：动态规划-背包问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">算法学习：动态规划-背包问题</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2021-03-15T16:06:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近啃动态规划，开个坑。</p>
+<p>先从经典背包问题开始</p>
+<p>背包问题是比较经典的动态规划问题，主要分析3类，01背包，完全背包，分组背包</p>
+<h2 id="01背包"><a href="#01背包" class="headerlink" title="01背包"></a>01背包</h2><p>01背包问题就是给定一个背包的最大容量v，以及一些物品，每个物品有自己的体积V[i]和价值W[i]，要求背包内物品体积不能超过v，的情况下求总价值的最大值。01指的是每个物品只有选1个或者选0个（不选）的情况。</p>
+<p>分析思路：动态规划问题是要确定状态表示和状态转移方程。状态表示比较难，一般可以先分类两个方向考虑–集合和集合的属性。就是我们每一个状态都表示当前问题中的一个集合，而我们的dp数组中存的就是这些集合对应的属性，一般常见的属性有max，min，len。对于这个问题，集合就是从前i个物品选，总体积小于等于j的选法，而属性，根据题意，就是所有这些选法的总价值最大值。</p>
+<p>那么如何确定状态转移方程。可以用集合划分的思维来考虑，对于dp（i，j）来说我们可以划分为两类，选第i个物品，和不选第i个物品。那不选的话，很简单，dp[i,j]=dp[i-1,j]。那么选第i个物品的情况可以这么考虑，把第i个去掉，考虑从前i-1个物品中选体积不大于j-vi的物品价值最大，那么算上第i个物品价值最大就直接+wi。因为第i个物品价值是常数，那么我们去掉一个常数的话是不会影响最大值的结果的（后面的问题也可以这么考虑）。所以这时dp[i,j]=dp[i-1,j-vi]+wi，当然这种情况下j&gt;=vi才可以，因为背包容积得大于第i个物品的体积，我们才能选。那么最终结果只要取这两个情况的最大值。</p>
+<p>我们要求的就是dp（n,m）</p>
+        
+          <a class="article-more-a" href="/2021/03/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-数据结构：单调栈与单调队列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -187,6 +269,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -259,6 +352,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
