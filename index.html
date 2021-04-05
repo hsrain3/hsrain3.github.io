@@ -152,6 +152,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-算法学习-动态规划-线性dp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/30/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E7%BA%BF%E6%80%A7dp/">算法学习-动态规划-线性dp</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/30/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E7%BA%BF%E6%80%A7dp/" class="archive-article-date">
+  	<time datetime="2021-03-30T15:24:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="线性dp"><a href="#线性dp" class="headerlink" title="线性dp"></a>线性dp</h1><p>线性dp主要是一些子序列问题和数字三角形问题，思考的方式还是从状态表示和状态转移两个方面</p>
+<h2 id="最长上升子序列"><a href="#最长上升子序列" class="headerlink" title="最长上升子序列"></a>最长上升子序列</h2><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-increasing-subsequence/">Leetcode300</a></p>
+<p>题目描述：给你一个整数数组 <code>nums</code> ，找到其中最长严格递增子序列的长度。</p>
+<p>这里的子数组是指删除数组中的元素而不改变其元素的顺序不一定是要连续的。例如，<code>[3,6,2,7]</code> 是数组 <code>[0,3,1,6,2,2,7]</code> 的子序列。</p>
+<p>动态规划问题还是从状态表示和状态转移两个方面来思考。对于一个序列问题来说，状态表示一般是一维的，dp（i）表示以第i个数字结尾递增子序列的集合，属性是max，最长的。现在考虑状态转移方程，还是从集合划分的角度来思考。考虑第i-1个数，可能的情况，那其实就有i-1种，全部枚举，求max就好了。当然得先判断第i-1个数是小于第i个数的。最后再枚举一下以各个数结尾最长子序列的长度，求最大就可以了。</p>
+        
+          <a class="article-more-a" href="/2021/03/30/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E7%BA%BF%E6%80%A7dp/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/30/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E7%BA%BF%E6%80%A7dp/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-算法学习：动态规划-背包问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
