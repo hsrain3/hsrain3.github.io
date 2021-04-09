@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2021 | Hexo</title>
+  <title>关于面试被问了n次C++虚函数那件事 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2021/index.html">
+  <meta name="description" content="最近在找实习，靠着大一学的一点C++，然后被怼了n次C++虚函数原理，这个课上也没讲，我们的教材也没有。。。。总结一下。 虚函数实现虚函数是C++多态的核心。实现多态的原理就是虚函数表。 每个含有虚函数的类都包含了一个虚函数表，表里面的每个表项是指向虚函数的函数指针。在类实例化的时候，会给每个对象分配一个隐藏成员vptr 是指向虚表的指针。比如基类中含有虚函数的话，那么基类的对象会包含一个虚指针v">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于面试被问了n次C++虚函数那件事">
+<meta property="og:url" content="http://example.com/2021/04/08/%E5%85%B3%E4%BA%8E%E9%9D%A2%E8%AF%95%E8%A2%AB%E9%97%AE%E4%BA%86n%E6%AC%A1C-%E8%99%9A%E5%87%BD%E6%95%B0%E9%82%A3%E4%BB%B6%E4%BA%8B/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="最近在找实习，靠着大一学的一点C++，然后被怼了n次C++虚函数原理，这个课上也没讲，我们的教材也没有。。。。总结一下。 虚函数实现虚函数是C++多态的核心。实现多态的原理就是虚函数表。 每个含有虚函数的类都包含了一个虚函数表，表里面的每个表项是指向虚函数的函数指针。在类实例化的时候，会给每个对象分配一个隐藏成员vptr 是指向虚表的指针。比如基类中含有虚函数的话，那么基类的对象会包含一个虚指针v">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-04-08T15:15:50.000Z">
+<meta property="article:modified_time" content="2021-04-09T04:23:00.131Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -150,36 +155,69 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-关于面试被问了n次C-虚函数那件事" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/08/%E5%85%B3%E4%BA%8E%E9%9D%A2%E8%AF%95%E8%A2%AB%E9%97%AE%E4%BA%86n%E6%AC%A1C-%E8%99%9A%E5%87%BD%E6%95%B0%E9%82%A3%E4%BB%B6%E4%BA%8B/" class="archive-article-date">
-  	<time datetime="2021-04-08T15:15:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-08</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/08/%E5%85%B3%E4%BA%8E%E9%9D%A2%E8%AF%95%E8%A2%AB%E9%97%AE%E4%BA%86n%E6%AC%A1C-%E8%99%9A%E5%87%BD%E6%95%B0%E9%82%A3%E4%BB%B6%E4%BA%8B/">关于面试被问了n次C++虚函数那件事</a>
+    <h1 class="article-title" itemprop="name">
+      关于面试被问了n次C++虚函数那件事
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2021/04/08/%E5%85%B3%E4%BA%8E%E9%9D%A2%E8%AF%95%E8%A2%AB%E9%97%AE%E4%BA%86n%E6%AC%A1C-%E8%99%9A%E5%87%BD%E6%95%B0%E9%82%A3%E4%BB%B6%E4%BA%8B/" class="archive-article-date">
+  	<time datetime="2021-04-08T15:15:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近在找实习，靠着大一学的一点C++，然后被怼了n次C++虚函数原理，这个课上也没讲，我们的教材也没有。。。。总结一下。</p>
+<h2 id="虚函数实现"><a href="#虚函数实现" class="headerlink" title="虚函数实现"></a>虚函数实现</h2><p>虚函数是C++多态的核心。实现多态的原理就是<strong>虚函数表</strong>。</p>
+<p>每个含有虚函数的类都包含了一个虚函数表，表里面的每个表项是指向虚函数的函数指针。在类实例化的时候，会给每个对象分配一个隐藏成员vptr 是指向虚表的指针。比如基类中含有虚函数的话，那么基类的对象会包含一个虚指针vptr指向基类中包含所有虚函数的地址表。派生类对象也会包含一个指向派生类虚函数表的指针vptr。如果派生类中提供了虚函数的新定义，那么在派生类的虚函数表中将存放新函数的地址。如果没有，该虚函数表会保存原来基类的虚函数地址。派生类中定义的新的虚函数也会保存在该虚函数表中。</p>
+<p>在用基类指针指向派生类对象的时候，是通过对象的vptr虚指针来进行虚函数的调用的。虽然这里是基类的指针，但是对象的虚表指针是属于基类的，也就是基类可以访问。所以可以实现基类指针调用派生类的方法。这也就是动态联编。程序根据对象的类型调用方法，但是对象的类型只有在运行的时候才能确定，所以被称为动态联编。普通的函数使用静态联编，也就是在编译的过程中确定函数的代码。指针类型在编译时已知，因此在编译时就能将基类的普通函数关联起来。</p>
+<h3 id="几个小问题"><a href="#几个小问题" class="headerlink" title="几个小问题"></a>几个小问题</h3><a id="more"></a>
+
+<p>1、构造函数可以是虚函数吗</p>
+<p>不能，因为派生类对象构造的时候将调用派生类的构造函数，再使用基类的，不同于继承的机制。创建对象的时候调用构造函数，不会使用基类指针显式调用，因此声明为虚的没什么意义。</p>
+<p>还有一点 构造函数是在对象生命的时候进行调用，在对象还没实例化的时候，就不存在相应的内存空间，也没有对应的虚指针，无法进行虚函数调用。</p>
+<p>2、析构函数为什么应该被设为虚函数</p>
+<p>在用基类指针指向一个派生类对象的时候，我们释放基类指针，如果是一般的函数，则只会调用基类的析构函数，这样就无法释放派生类对象新的成员指向的内存。因此析构函数应当设置为虚函数，除非类不用做基类。</p>
+<p>参考：《C++ Primer Plus》第6版 中文版</p>
+<p>博客：CPlusPlusThings  <a target="_blank" rel="noopener" href="https://light-city.club/sc/basic_content/vptr_vtable/">https://light-city.club/sc/basic_content/vptr_vtable/</a></p>
+<p><a target="_blank" rel="noopener" href="https://leehao.me/C-%E8%99%9A%E5%87%BD%E6%95%B0%E8%A1%A8%E5%89%96%E6%9E%90/%C3%9F">https://leehao.me/C-%E8%99%9A%E5%87%BD%E6%95%B0%E8%A1%A8%E5%89%96%E6%9E%90/ß</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,247 +229,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/04/08/%E5%85%B3%E4%BA%8E%E9%9D%A2%E8%AF%95%E8%A2%AB%E9%97%AE%E4%BA%86n%E6%AC%A1C-%E8%99%9A%E5%87%BD%E6%95%B0%E9%82%A3%E4%BB%B6%E4%BA%8B/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/30/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E7%BA%BF%E6%80%A7dp/" class="archive-article-date">
-  	<time datetime="2021-03-30T15:24:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-30</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/03/30/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E7%BA%BF%E6%80%A7dp/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">算法学习：动态规划-线性dp</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/30/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E7%BA%BF%E6%80%A7dp/">算法学习：动态规划-线性dp</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2021-03-15T16:06:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">算法学习：动态规划-背包问题</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E8%B0%83%E6%A0%88%E4%B8%8E%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" class="archive-article-date">
-  	<time datetime="2021-03-07T15:47:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E8%B0%83%E6%A0%88%E4%B8%8E%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/">数据结构：单调栈与单调队列</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-02-16T13:58:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">算法学习：排序算法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/14/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%8F%8A%E5%BA%94%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2021-02-14T15:47:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/14/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%8F%8A%E5%BA%94%E7%94%A8/">算法学习：二分查找及应用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/25/ubuntu/" class="archive-article-date">
-  	<time datetime="2021-01-25T08:36:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/25/ubuntu/">Ubuntu 虚拟机nat模式下配置ssh</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Linux学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -454,8 +351,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
