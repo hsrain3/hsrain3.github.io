@@ -11,7 +11,7 @@
   <meta name="description" content="最近啃动态规划，开个坑。 先从经典背包问题开始 背包问题是比较经典的动态规划问题，主要分析3类，01背包，完全背包，分组背包 01背包01背包问题就是给定一个背包的最大容量v，以及一些物品，每个物品有自己的体积V[i]和价值W[i]，要求背包内物品体积不能超过v，的情况下求总价值的最大值。01指的是每个物品只有选1个或者选0个（不选）的情况。 分析思路：动态规划问题是要确定状态表示和状态转移方程。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法学习：动态规划-背包问题">
-<meta property="og:url" content="http://example.com/2021/03/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:url" content="http://example.com/2021/03/15/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="最近啃动态规划，开个坑。 先从经典背包问题开始 背包问题是比较经典的动态规划问题，主要分析3类，01背包，完全背包，分组背包 01背包01背包问题就是给定一个背包的最大容量v，以及一些物品，每个物品有自己的体积V[i]和价值W[i]，要求背包内物品体积不能超过v，的情况下求总价值的最大值。01指的是每个物品只有选1个或者选0个（不选）的情况。 分析思路：动态规划问题是要确定状态表示和状态转移方程。">
 <meta property="og:locale" content="en_US">
@@ -48,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="https://media.licdn.cn/dms/image/C4E03AQG65jERsdrbug/profile-displayphoto-shrink_800_800/0/1613403488639?e=1629936000&amp;v=beta&amp;t=Yz4_jh5WlVmqQK66KBq-XnIHZkJpUnENgOZhW10UkC4" class="js-avatar">
+			<img src="https://media-exp1.licdn.com/dms/image/C4E03AQG65jERsdrbug/profile-displayphoto-shrink_800_800/0/1613403488639?e=1641427200&amp;v=beta&amp;t=gjRjhGr0RV8nCH8IZ37r7v-e7L1SAtf1L9oUYONBE9Y" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/"></a></h1>
@@ -106,7 +106,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://media.licdn.cn/dms/image/C4E03AQG65jERsdrbug/profile-displayphoto-shrink_800_800/0/1613403488639?e=1629936000&amp;v=beta&amp;t=Yz4_jh5WlVmqQK66KBq-XnIHZkJpUnENgOZhW10UkC4" class="js-avatar">
+				<img src="https://media-exp1.licdn.com/dms/image/C4E03AQG65jERsdrbug/profile-displayphoto-shrink_800_800/0/1613403488639?e=1641427200&amp;v=beta&amp;t=gjRjhGr0RV8nCH8IZ37r7v-e7L1SAtf1L9oUYONBE9Y" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author"></h1>
@@ -167,8 +167,8 @@
   
 
         
-        <a href="/2021/03/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2021-03-15T16:06:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-16</time>
+        <a href="/2021/03/15/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2021-03-15T16:06:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-15</time>
 </a>
         
       </header>
@@ -318,7 +318,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/15/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
     </div>
 </div>
 
