@@ -165,7 +165,7 @@
 
         
         <a href="/2021/06/25/go%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2021-06-25T15:06:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-25</time>
+  	<time datetime="2021-06-25T22:06:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-25</time>
 </a>
         
       </header>
@@ -249,7 +249,7 @@
 
         
         <a href="/2021/04/22/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-bfs/" class="archive-article-date">
-  	<time datetime="2021-04-22T15:13:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-22</time>
+  	<time datetime="2021-04-22T22:13:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-22</time>
 </a>
         
       </header>
@@ -326,7 +326,7 @@
 
         
         <a href="/2021/04/08/%E5%85%B3%E4%BA%8E%E9%9D%A2%E8%AF%95%E8%A2%AB%E9%97%AE%E4%BA%86n%E6%AC%A1C-%E8%99%9A%E5%87%BD%E6%95%B0%E9%82%A3%E4%BB%B6%E4%BA%8B/" class="archive-article-date">
-  	<time datetime="2021-04-08T15:15:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-08</time>
+  	<time datetime="2021-04-08T22:15:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-08</time>
 </a>
         
       </header>
@@ -406,7 +406,7 @@
 
         
         <a href="/2021/03/30/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E7%BA%BF%E6%80%A7dp/" class="archive-article-date">
-  	<time datetime="2021-03-30T15:24:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-30</time>
+  	<time datetime="2021-03-30T22:24:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-30</time>
 </a>
         
       </header>
@@ -480,13 +480,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/15/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">算法学习：动态规划-背包问题</a>
+      <a class="article-title" href="/2021/03/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">算法学习：动态规划-背包问题</a>
     </h1>
   
 
         
-        <a href="/2021/03/15/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2021-03-15T16:06:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-15</time>
+        <a href="/2021/03/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2021-03-16T00:06:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-16</time>
 </a>
         
       </header>
@@ -501,7 +501,7 @@
 <p>那么如何确定状态转移方程。可以用集合划分的思维来考虑，对于dp（i，j）来说我们可以划分为两类，选第i个物品，和不选第i个物品。那不选的话，很简单，dp[i,j]=dp[i-1,j]。那么选第i个物品的情况可以这么考虑，把第i个去掉，考虑从前i-1个物品中选体积不大于j-vi的物品价值最大，那么算上第i个物品价值最大就直接+wi。因为第i个物品价值是常数，那么我们去掉一个常数的话是不会影响最大值的结果的（后面的问题也可以这么考虑）。所以这时dp[i,j]=dp[i-1,j-vi]+wi，当然这种情况下j&gt;=vi才可以，因为背包容积得大于第i个物品的体积，我们才能选。那么最终结果只要取这两个情况的最大值。</p>
 <p>我们要求的就是dp（n,m）</p>
         
-          <a class="article-more-a" href="/2021/03/15/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/#more">more >></a>
+          <a class="article-more-a" href="/2021/03/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/#more">more >></a>
         
       
 
@@ -525,7 +525,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/15/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/03/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">展开全文 >></a>
         </p>
       
 
@@ -568,7 +568,7 @@
 
         
         <a href="/2021/03/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E8%B0%83%E6%A0%88%E4%B8%8E%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" class="archive-article-date">
-  	<time datetime="2021-03-07T15:47:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-07</time>
+  	<time datetime="2021-03-07T23:47:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-07</time>
 </a>
         
       </header>
@@ -648,7 +648,7 @@
 
         
         <a href="/2021/02/16/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-02-16T13:58:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-16</time>
+  	<time datetime="2021-02-16T21:58:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-16</time>
 </a>
         
       </header>
@@ -731,7 +731,7 @@
 
         
         <a href="/2021/02/14/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%8F%8A%E5%BA%94%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2021-02-14T15:47:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-14</time>
+  	<time datetime="2021-02-14T23:47:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-14</time>
 </a>
         
       </header>
@@ -813,7 +813,7 @@
 
         
         <a href="/2021/01/25/ubuntu/" class="archive-article-date">
-  	<time datetime="2021-01-25T08:36:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-25</time>
+  	<time datetime="2021-01-25T16:36:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-25</time>
 </a>
         
       </header>
@@ -971,11 +971,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Linux学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数据结构与算法</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -983,7 +979,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
+                <a href="javascript:void(0)" class="js-tag color3">Linux学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数据结构与算法</a>
               </li>
             
             <div class="clearfix"></div>
