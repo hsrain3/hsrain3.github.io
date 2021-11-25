@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>tags | Hexo</title>
+  <title>C++ best practices | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://example.com/tags/index.html">
+  <meta name="description" content="CPP best practicefor general projectAdd function&#x2F;method&#x2F;class description in header file. Clear and concise comments in function&#x2F;method body. Remove debugging output in submitted code. Replicating cod">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ best practices">
+<meta property="og:url" content="http://example.com/2021/11/25/C-best-practices/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="CPP best practicefor general projectAdd function&#x2F;method&#x2F;class description in header file. Clear and concise comments in function&#x2F;method body. Remove debugging output in submitted code. Replicating cod">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-03-15T00:20:28.000Z">
-<meta property="article:modified_time" content="2021-03-14T16:20:47.291Z">
+<meta property="article:published_time" content="2021-11-25T22:45:15.000Z">
+<meta property="article:modified_time" content="2021-11-25T22:49:11.096Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="面向对象">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -152,27 +156,35 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-C-best-practices" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      tags
+      C++ best practices
     </h1>
   
 
         
-        <a href="/tags/index.html" class="archive-article-date">
-  	<time datetime="2021-03-15T00:20:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-15</time>
+        <a href="/2021/11/25/C-best-practices/" class="archive-article-date">
+  	<time datetime="2021-11-25T22:45:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="CPP-best-practice"><a href="#CPP-best-practice" class="headerlink" title="CPP best practice"></a>CPP best practice</h1><h3 id="for-general-project"><a href="#for-general-project" class="headerlink" title="for general project"></a>for general project</h3><p>Add function/method/class description in header file.</p>
+<p>Clear and concise comments in function/method body.</p>
+<p>Remove debugging output in submitted code.</p>
+<p>Replicating code —&gt; function.</p>
+<h3 id="OOP"><a href="#OOP" class="headerlink" title="OOP"></a>OOP</h3><p><strong>Rules of 3</strong>: If define define all three i.e. copy constructor, copy assignment, destructor.</p>
+<p>Overload getter on const. Eg.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Event <span class="keyword">const</span>&amp; <span class="title">getEvent</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line"><span class="function">Event&amp; <span class="title">getEvent</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p>Do not use namespace in headers.</p>
+
       
 
       
@@ -201,6 +213,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">面向对象</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -251,7 +278,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/tags/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/11/25/C-best-practices/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -263,6 +290,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2021/06/25/go%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">go环境配置</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -313,7 +350,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

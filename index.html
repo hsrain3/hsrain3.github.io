@@ -152,6 +152,91 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-C-best-practices" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/25/C-best-practices/">C++ best practices</a>
+    </h1>
+  
+
+        
+        <a href="/2021/11/25/C-best-practices/" class="archive-article-date">
+  	<time datetime="2021-11-25T22:45:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="CPP-best-practice"><a href="#CPP-best-practice" class="headerlink" title="CPP best practice"></a>CPP best practice</h1><h3 id="for-general-project"><a href="#for-general-project" class="headerlink" title="for general project"></a>for general project</h3><p>Add function/method/class description in header file.</p>
+<p>Clear and concise comments in function/method body.</p>
+<p>Remove debugging output in submitted code.</p>
+<p>Replicating code —&gt; function.</p>
+<h3 id="OOP"><a href="#OOP" class="headerlink" title="OOP"></a>OOP</h3><p><strong>Rules of 3</strong>: If define define all three i.e. copy constructor, copy assignment, destructor.</p>
+<p>Overload getter on const. Eg.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Event <span class="keyword">const</span>&amp; <span class="title">getEvent</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line"><span class="function">Event&amp; <span class="title">getEvent</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p>Do not use namespace in headers.</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">面向对象</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/11/25/C-best-practices/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-go环境配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -174,16 +259,9 @@
       
         <h2 id="Linux-下go开发环境搭建"><a href="#Linux-下go开发环境搭建" class="headerlink" title="Linux 下go开发环境搭建"></a>Linux 下go开发环境搭建</h2><p>系统：Ubuntu 16.04</p>
 <h3 id="下载golang"><a href="#下载golang" class="headerlink" title="下载golang"></a>下载golang</h3><p>从官网上下载go压缩包 解压到usr/local/go 目录下</p>
-<h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo vim ~/.profile</span><br><span class="line"><span class="meta">#</span><span class="bash"> 文件中添加以下命令</span> </span><br><span class="line">export GOROOT=/usr/local/go</span><br><span class="line">export GOPATH=$HOME/go</span><br><span class="line">export GOBIN=$GOPATH/bin</span><br><span class="line">export PATH=$PATH:$GOBIN</span><br><span class="line"><span class="meta">#</span><span class="bash"> 使配置文件立即生效</span></span><br><span class="line">source ~/.profile</span><br></pre></td></tr></table></figure>
-<p>gopath是工作目录 可以自己新建一个文件夹</p>
-<p>验证以下安装是否成功</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go version</span><br></pre></td></tr></table></figure>
-<p>会出现当前安装的go版本</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go env</span><br></pre></td></tr></table></figure>
-<p>会出现上述配置信息，上述路径是否正确</p>
-<p>在使用go get安装一些包的时候会出现网络错误，需要配置代理</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export GO111MODULE=&quot;on&quot;</span><br><span class="line">export GOPROXY=https://goproxy.io</span><br></pre></td></tr></table></figure>
-
+        
+          <a class="article-more-a" href="/2021/06/25/go%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/#more">more >></a>
+        
       
 
       
@@ -984,6 +1062,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数据结构与算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">面向对象</a>
               </li>
             
             <div class="clearfix"></div>
