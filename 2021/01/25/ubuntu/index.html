@@ -184,7 +184,7 @@
         <h1 id><a href="#" class="headerlink" title></a></h1><p>虚拟机：VMware 16，系统：Ubuntu20.04.1</p>
 <p>一般只有桥接模式下宿主机可以ssh连接，但是之前按照网上的一直配置不成功，而且nat模式下Ubuntu系统安装完会自动联网，只需配置ssh。参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/disalone201107/article/details/78411073?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1.control">https://blog.csdn.net/disalone201107/article/details/78411073?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1.control</a></p>
 <p>用下面的方法解决ssh配置问题</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <p><img src="https://i.loli.net/2021/02/05/T8ChSaO3IblrJKw.png" alt="I06"></p>
 <p>注意打开虚拟网络编辑器的时候最好关闭虚拟机。</p>
@@ -201,8 +201,10 @@
 <p>修改 <code>vim /etc/ssh/sshd_config</code></p>
 <p>找到# Authentication:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">LoginGraceTime 120</span><br><span class="line">PermitRootLogin without passwd</span><br><span class="line">StrictModes yes</span><br></pre></td></tr></table></figure>
+
 <p>改成</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">LoginGraceTime 120</span><br><span class="line">PermitRootLogin yes</span><br><span class="line">StrictModes yes</span><br></pre></td></tr></table></figure>
+
 <p>然后保存退出，重启ssh。</p>
 <p><code>ststemctl restart sshd</code></p>
 <p>然后就可以在宿主机上用xshell等软件远程连接自己的虚拟机了。</p>
