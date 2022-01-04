@@ -178,7 +178,9 @@
 <li>Bellman-ford （可以处理负权边的情况）</li>
 <li>spfa （优化版，更新过的入队列）</li>
 </ul>
-<h3 id="Dijkstra"><a href="#Dijkstra" class="headerlink" title="Dijkstra"></a>Dijkstra</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+<h3 id="Dijkstra"><a href="#Dijkstra" class="headerlink" title="Dijkstra"></a>Dijkstra</h3><p>Dijkstra是用来求非负权值的单源最短路径，问题是：给定一个n个顶点有向图，边权均为正值，求从1号点到其他各顶点的最短路径。</p>
+<p>算法步骤</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 
 
       
@@ -253,12 +255,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="内存管理-Memory-Management"><a href="#内存管理-Memory-Management" class="headerlink" title="内存管理 Memory Management"></a>内存管理 Memory Management</h1><p>在内存管理中，内部碎片是已经被分配出去的的内存空间大于请求所需的内存空间。</p>
-<p>  外部碎片–总内存够，但是不连续，无法分配给进程</p>
-<p>  固定分区存在内部碎片，可变式分区分配会存在外部碎片；</p>
+        <h1 id="内存管理-Memory-Management"><a href="#内存管理-Memory-Management" class="headerlink" title="内存管理 Memory Management"></a>内存管理 Memory Management</h1><h3 id="Internal-fragamentation-vs-External-fragamentation"><a href="#Internal-fragamentation-vs-External-fragamentation" class="headerlink" title="Internal fragamentation vs External fragamentation"></a>Internal fragamentation vs External fragamentation</h3><p>在内存管理中，内部碎片是已经被分配出去的的内存空间大于请求所需的内存空间。</p>
+<p>  外部碎片–总内存够，但是不连续，无法分配给进程。</p>
+<p>  固定分区存在内部碎片，可变式分区分配会存在外部碎片。</p>
 <p>  页式虚拟存储系统存在内部碎片；段式虚拟存储系统，存在外部碎片</p>
 <p>  为了有效的利用内存，使内存产生更少的碎片，要对内存分页，内存以页为单位来使用，最后一页往往装不满，于是形成了内部碎片。</p>
-<p>  分页式存储管理旨在提高内存利用率，满足系统管理的需要，分段式存储管理则旨在满足用户  (程序员)的需要，在实现共享和保护方面优于分页式存储管理。</p>
+<h3 id="页表项"><a href="#页表项" class="headerlink" title="页表项"></a>页表项</h3><p>由虚拟页号作为页表索引找到对应页表项，然后把页框号拼到偏移量高位端，形成物理内存地址。</p>
+<ul>
+<li>保护位(protection) 指出一个页允许什么样的访问。</li>
+<li>修改位(modified) 指出这页是否被修改过，如果被修改过在页面置换的时候需要写回磁盘，如果是干净的则可以直接丢弃</li>
+<li>访问位(referenced)  用于页面置换算法决定淘汰的页面。</li>
+<li>在/不在位 0表示该页面不在内存中</li>
+<li>页框号</li>
+</ul>
+<h3 id="段页式内存管理"><a href="#段页式内存管理" class="headerlink" title="段页式内存管理"></a>段页式内存管理</h3><p>  分页式存储管理旨在提高内存利用率，满足系统管理的需要，分段式存储管理则旨在满足用户  (程序员)的需要，在实现共享和保护方面优于分页式存储管理。</p>
 
       
 
@@ -332,7 +342,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="CPP-best-practice"><a href="#CPP-best-practice" class="headerlink" title="CPP best practice"></a>CPP best practice</h1><h3 id="for-general-project"><a href="#for-general-project" class="headerlink" title="for general project"></a>for general project</h3><p>Add function/method/class description in header file.</p>
+        <h1 id="CPP-best-practice"><a href="#CPP-best-practice" class="headerlink" title="CPP best practice"></a>CPP best practice</h1><h3 id="For-general-project"><a href="#For-general-project" class="headerlink" title="For general project"></a>For general project</h3><p>Add function/method/class description in header file.</p>
 <p>Clear and concise comments in function/method body.</p>
 <p>Remove debugging output in submitted code.</p>
 <p>Replicating code —&gt; function.</p>
