@@ -179,80 +179,9 @@
 
 <p>这里使用ubuntu系统作为例子, 进入之后先更新</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update &amp;&amp; apt-get upgrade</span><br></pre></td></tr></table></figure>
-
-<p>接着创建一个用户用于ssh登录，把root用户暴露给ssh并不安全</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd -G sudo -m yourname -s /bin/bash</span><br></pre></td></tr></table></figure>
-
-<p>这条命令创建了一个使用bash作为默认shell的用户并给了sudo权限</p>
-<p>然后设置密码</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd yourname</span><br></pre></td></tr></table></figure>
-
-<p>输入你的密码</p>
-<h3 id="创建sshkey"><a href="#创建sshkey" class="headerlink" title="创建sshkey"></a>创建sshkey</h3><p>使用ssh key可以避免每次输入密码进行登录</p>
-<p>在本机terminal中生成sshkey</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096</span><br></pre></td></tr></table></figure>
-
-<p>把ssh公钥拷贝到服务器</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id yourname@ip_address</span><br></pre></td></tr></table></figure>
-
-<p>配置sshd服务</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
-
-<p>修改ssh默认端口（可选）这一步是为了防止网络扫描软件扫描特定端口服务，并且试图登入</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Port 22</span></span><br><span class="line">Port 69  #可以设置为任何未被使用的端口</span><br></pre></td></tr></table></figure>
-
-<p>禁止密码登录（可选）也是为了保证安全性，这一步设置了之后只能使用ssh公钥进行登录了</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PasswordAuthentication no</span><br></pre></td></tr></table></figure>
-
-<p>禁止root ssh登录</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PermitRootLogin no</span><br></pre></td></tr></table></figure>
-
-<p>保存文件并重启sshd 服务</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart sshd</span><br></pre></td></tr></table></figure>
-
-<p>接下来在本机尝试登录</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -i ~/.ssh/id_rsa yourname@ip_address -p 69</span><br></pre></td></tr></table></figure>
-
-<p>如果配置了禁止密码登录，使用如下的命令会显示Permission denied </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh yourname@ip_address -p 69</span><br></pre></td></tr></table></figure>
-
-<h3 id="配置快捷登录"><a href="#配置快捷登录" class="headerlink" title="配置快捷登录"></a>配置快捷登录</h3><p>每次登录服务器需要输入用户名和ip比较繁琐，可以给服务器设置名称</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.ssh/config</span><br></pre></td></tr></table></figure>
-
-<p>如果没有上述文件创建一下即可</p>
-<p>在配置文件中输入</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host myvpn # 你的自定义服务器名称</span><br><span class="line">    User yourname # 刚才创建的用户名</span><br><span class="line">    Port 69</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa # ssh key文件</span><br><span class="line">    HostName ip_address # 服务器ip地址</span><br></pre></td></tr></table></figure>
-
-<p>保存退出 接下来可以使用</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh myvpn</span><br></pre></td></tr></table></figure>
-
-<p>直接登录</p>
-<h3 id="配置openvpn服务端"><a href="#配置openvpn服务端" class="headerlink" title="配置openvpn服务端"></a>配置openvpn服务端</h3><p>我们使用一个开源的安装脚本<a target="_blank" rel="noopener" href="https://github.com/Nyr/openvpn-install%E5%AE%89%E8%A3%85openvpn%E6%9C%8D%E5%8A%A1%E7%AB%AF">https://github.com/Nyr/openvpn-install安装openvpn服务端</a>, 直接下载raw文件到本地服务器</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://raw.githubusercontent.com/Nyr/openvpn-install/master/openvpn-install.sh</span><br></pre></td></tr></table></figure>
-
-<p>运行脚本</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash openvpn-install.sh</span><br></pre></td></tr></table></figure>
-
-<p>脚本运行过程中会询问一些问题，比如端口，选择默认端口1194即可，也可以选择别的端口，dns可以选择1.1.1.1</p>
-<p>然后会生成客户端文件，自己命名即可</p>
-<p>生成的客户端文件会在root目录下，将他移到当前目录</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mv /root/mymacbook.ovpn ~</span><br><span class="line">sudo chown yourname mymacbook.ovpn #给当前用户权限</span><br></pre></td></tr></table></figure>
-
-<p>接下来禁止log文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/openvpn/server/server.conf</span><br></pre></td></tr></table></figure>
-
-<p>把verb 3改成verb 0</p>
-<p>重启openvpn service</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart openvpn-server@server.service</span><br></pre></td></tr></table></figure>
-
-<p>这样你的vpn不会保留任何的上网记录</p>
-<p>接下来把客户端的.ovpn文件下载到本机</p>
-<p>可以使用xftp或者filezilla软件下载，也可以直接使用sftp命令</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sftp servername</span><br><span class="line">get configname.ovpn #之前生成的ovpn文件名</span><br></pre></td></tr></table></figure>
-
-<p>在本机上安装<a target="_blank" rel="noopener" href="https://tunnelblick.net/">Tunnelblick</a> , 如果是windows安装openVPN connect导入刚才的.ovpn文件就可以自由上网啦。</p>
-<p>如果想要给生成多个客户端文件，可以再次运行脚本，选择生成客户端文件即可。</p>
-
+        
+          <a class="article-more-a" href="/2022/05/30/%E6%90%AD%E5%BB%BAvpn%E8%8A%82%E7%82%B9/#more">more >></a>
+        
       
 
       

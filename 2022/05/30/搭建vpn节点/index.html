@@ -16,7 +16,7 @@
 <meta property="og:description" content="搭建自己的专属vpn节点虚拟专用网络 (VPN)可以让我们的上网数据更加安全，当然对于在国内的用户一个更重要的目的是访问外网资源。使用现有的vpn服务商提供的服务可以解决一部分问题，但也意味着你的上网记录全在他们的服务器上，自己搭建的vpn server不仅保证了安全性，也保证了流量速度。 首先需要一台位于国外的云服务器，这个可以从AWS或者其他的云服务公司获取，节点位置的选择看个人需求。cpu核">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-30T15:37:58.000Z">
-<meta property="article:modified_time" content="2022-05-30T16:33:57.888Z">
+<meta property="article:modified_time" content="2022-05-30T16:35:03.846Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="搞着玩的">
 <meta name="twitter:card" content="summary">
@@ -182,6 +182,8 @@
 
 <p>这里使用ubuntu系统作为例子, 进入之后先更新</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update &amp;&amp; apt-get upgrade</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
 
 <p>接着创建一个用户用于ssh登录，把root用户暴露给ssh并不安全</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd -G sudo -m yourname -s /bin/bash</span><br></pre></td></tr></table></figure>
