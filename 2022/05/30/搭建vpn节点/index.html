@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2021/4 | Hexo</title>
+  <title>搭建vpn节点 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2021/04/index.html">
+  <meta name="description" content="搭建自己的专属vpn节点虚拟专用网络 (VPN)可以让我们的上网数据更加安全，当然对于在国内的用户一个更重要的目的是访问外网资源。使用现有的vpn服务商提供的服务可以解决一部分问题，但也意味着你的上网记录全在他们的服务器上，自己搭建的vpn server不仅保证了安全性，也保证了流量速度。 首先需要一台位于国外的云服务器，这个可以从AWS或者其他的云服务公司获取，节点位置的选择看个人需求。cpu核">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建vpn节点">
+<meta property="og:url" content="http://example.com/2022/05/30/%E6%90%AD%E5%BB%BAvpn%E8%8A%82%E7%82%B9/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="搭建自己的专属vpn节点虚拟专用网络 (VPN)可以让我们的上网数据更加安全，当然对于在国内的用户一个更重要的目的是访问外网资源。使用现有的vpn服务商提供的服务可以解决一部分问题，但也意味着你的上网记录全在他们的服务器上，自己搭建的vpn server不仅保证了安全性，也保证了流量速度。 首先需要一台位于国外的云服务器，这个可以从AWS或者其他的云服务公司获取，节点位置的选择看个人需求。cpu核">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-05-30T15:37:58.000Z">
+<meta property="article:modified_time" content="2022-05-30T16:33:57.888Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="搞着玩的">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -150,98 +155,246 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-搭建vpn节点" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/22/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-bfs/" class="archive-article-date">
-  	<time datetime="2021-04-22T22:13:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/22/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-bfs/">算法学习：bfs</a>
+    <h1 class="article-title" itemprop="name">
+      搭建vpn节点
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2022/05/30/%E6%90%AD%E5%BB%BAvpn%E8%8A%82%E7%82%B9/" class="archive-article-date">
+  	<time datetime="2022-05-30T15:37:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="搭建自己的专属vpn节点"><a href="#搭建自己的专属vpn节点" class="headerlink" title="搭建自己的专属vpn节点"></a>搭建自己的专属vpn节点</h1><p>虚拟专用网络 (VPN)可以让我们的上网数据更加安全，当然对于在国内的用户一个更重要的目的是访问外网资源。使用现有的vpn服务商提供的服务可以解决一部分问题，但也意味着你的上网记录全在他们的服务器上，自己搭建的vpn server不仅保证了安全性，也保证了流量速度。</p>
+<p>首先需要一台位于国外的云服务器，这个可以从AWS或者其他的云服务公司获取，节点位置的选择看个人需求。cpu核数和内存大小可以选择最低一档。</p>
+<h3 id="登入服务器"><a href="#登入服务器" class="headerlink" title="登入服务器"></a>登入服务器</h3><p>创建好之后可以通过ssh命令进入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@ip-address</span><br></pre></td></tr></table></figure>
+
+<p>这里使用ubuntu系统作为例子, 进入之后先更新</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update &amp;&amp; apt-get upgrade</span><br></pre></td></tr></table></figure>
+
+<p>接着创建一个用户用于ssh登录，把root用户暴露给ssh并不安全</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd -G sudo -m yourname -s /bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>这条命令创建了一个使用bash作为默认shell的用户并给了sudo权限</p>
+<p>然后设置密码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd yourname</span><br></pre></td></tr></table></figure>
+
+<p>输入你的密码</p>
+<h3 id="创建sshkey"><a href="#创建sshkey" class="headerlink" title="创建sshkey"></a>创建sshkey</h3><p>使用ssh key可以避免每次输入密码进行登录</p>
+<p>在本机terminal中生成sshkey</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096</span><br></pre></td></tr></table></figure>
+
+<p>把ssh公钥拷贝到服务器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id yourname@ip_address</span><br></pre></td></tr></table></figure>
+
+<p>配置sshd服务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+
+<p>修改ssh默认端口（可选）这一步是为了防止网络扫描软件扫描特定端口服务，并且试图登入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Port 22</span></span><br><span class="line">Port 69  #可以设置为任何未被使用的端口</span><br></pre></td></tr></table></figure>
+
+<p>禁止密码登录（可选）也是为了保证安全性，这一步设置了之后只能使用ssh公钥进行登录了</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PasswordAuthentication no</span><br></pre></td></tr></table></figure>
+
+<p>禁止root ssh登录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PermitRootLogin no</span><br></pre></td></tr></table></figure>
+
+<p>保存文件并重启sshd 服务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart sshd</span><br></pre></td></tr></table></figure>
+
+<p>接下来在本机尝试登录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -i ~/.ssh/id_rsa yourname@ip_address -p 69</span><br></pre></td></tr></table></figure>
+
+<p>如果配置了禁止密码登录，使用如下的命令会显示Permission denied </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh yourname@ip_address -p 69</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置快捷登录"><a href="#配置快捷登录" class="headerlink" title="配置快捷登录"></a>配置快捷登录</h3><p>每次登录服务器需要输入用户名和ip比较繁琐，可以给服务器设置名称</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.ssh/config</span><br></pre></td></tr></table></figure>
+
+<p>如果没有上述文件创建一下即可</p>
+<p>在配置文件中输入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host myvpn # 你的自定义服务器名称</span><br><span class="line">    User yourname # 刚才创建的用户名</span><br><span class="line">    Port 69</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa # ssh key文件</span><br><span class="line">    HostName ip_address # 服务器ip地址</span><br></pre></td></tr></table></figure>
+
+<p>保存退出 接下来可以使用</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh myvpn</span><br></pre></td></tr></table></figure>
+
+<p>直接登录</p>
+<h3 id="配置openvpn服务端"><a href="#配置openvpn服务端" class="headerlink" title="配置openvpn服务端"></a>配置openvpn服务端</h3><p>我们使用一个开源的安装脚本<a target="_blank" rel="noopener" href="https://github.com/Nyr/openvpn-install%E5%AE%89%E8%A3%85openvpn%E6%9C%8D%E5%8A%A1%E7%AB%AF">https://github.com/Nyr/openvpn-install安装openvpn服务端</a>, 直接下载raw文件到本地服务器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://raw.githubusercontent.com/Nyr/openvpn-install/master/openvpn-install.sh</span><br></pre></td></tr></table></figure>
+
+<p>运行脚本</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash openvpn-install.sh</span><br></pre></td></tr></table></figure>
+
+<p>脚本运行过程中会询问一些问题，比如端口，选择默认端口1194即可，也可以选择别的端口，dns可以选择1.1.1.1</p>
+<p>然后会生成客户端文件，自己命名即可</p>
+<p>生成的客户端文件会在root目录下，将他移到当前目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mv /root/mymacbook.ovpn ~</span><br><span class="line">sudo chown yourname mymacbook.ovpn #给当前用户权限</span><br></pre></td></tr></table></figure>
+
+<p>接下来禁止log文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/openvpn/server/server.conf</span><br></pre></td></tr></table></figure>
+
+<p>把verb 3改成verb 0</p>
+<p>重启openvpn service</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart openvpn-server@server.service</span><br></pre></td></tr></table></figure>
+
+<p>这样你的vpn不会保留任何的上网记录</p>
+<p>接下来把客户端的.ovpn文件下载到本机</p>
+<p>可以使用xftp或者filezilla软件下载，也可以直接使用sftp命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sftp servername</span><br><span class="line">get configname.ovpn #之前生成的ovpn文件名</span><br></pre></td></tr></table></figure>
+
+<p>在本机上安装<a target="_blank" rel="noopener" href="https://tunnelblick.net/">Tunnelblick</a> , 如果是windows安装openVPN connect导入刚才的.ovpn文件就可以自由上网啦。</p>
+<p>如果想要给生成多个客户端文件，可以再次运行脚本，选择生成客户端文件即可。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">搞着玩的</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/05/30/%E6%90%AD%E5%BB%BAvpn%E8%8A%82%E7%82%B9/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/08/%E5%85%B3%E4%BA%8E%E9%9D%A2%E8%AF%95%E8%A2%AB%E9%97%AE%E4%BA%86n%E6%AC%A1C-%E8%99%9A%E5%87%BD%E6%95%B0%E9%82%A3%E4%BB%B6%E4%BA%8B/" class="archive-article-date">
-  	<time datetime="2021-04-08T22:15:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-08</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/12/30/%E5%9B%BE%E8%AE%BA%E5%A4%8D%E4%B9%A0-%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E4%B8%8E%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">图论复习:最短路径与最小生成树</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/08/%E5%85%B3%E4%BA%8E%E9%9D%A2%E8%AF%95%E8%A2%AB%E9%97%AE%E4%BA%86n%E6%AC%A1C-%E8%99%9A%E5%87%BD%E6%95%B0%E9%82%A3%E4%BB%B6%E4%BA%8B/">关于面试被问了n次C++虚函数那件事</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -264,8 +417,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
